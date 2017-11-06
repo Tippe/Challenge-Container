@@ -10,6 +10,7 @@ class Ships extends CI_Controller {
     }
  
     public function index(){
+        $this->Ship_model->get_ships();
         $data['title'] = 'Ships';
  
         $this->load->view('templates/header', $data);
