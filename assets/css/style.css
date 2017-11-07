@@ -51,6 +51,9 @@ body {
 .bold{
 	font-weight: bold;
 }
+a.header {
+	color: white !important;
+}
 
 html, body{
 	font-family: 'Signika', sans-serif;

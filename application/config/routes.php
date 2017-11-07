@@ -5,4 +5,5 @@ $route['default_controller'] = 'pages/view';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['(:any)'] = 'pages/view/$1'; // $1 represents anything
+$route['ships'] = 'ships';
 $route['ships/view/(:any)'] = 'ships/view/$1'; // $1 represents anything

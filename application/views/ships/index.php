@@ -4,7 +4,7 @@
 
     <br />
 
-    <a type="button" class="btn btn-success" href=<?php echo base_url('ships/create'); ?> >Create</a>
+    <a type="button" class="btn btn-success" href=<?php echo base_url('ships/create'); ?>>Create</a>
 
     <section class="content container-fluid">
     <table class="table table-bordered">
@@ -16,9 +16,10 @@
         <td class="bold">View</td>
         <td class="bold">Edit</td>
         <td class="bold">Delete</td>
-
     </tr>
+
     <?php foreach ($ships as $ship): ?>
+        
     <tr>
         <td><?php echo $ship['imo_number']; ?></td>
         <td><?php echo $ship['name']; ?></td>

@@ -10,7 +10,7 @@ class Ships extends CI_Controller {
     }
  
     public function index(){
-        $this->Ship_model->get_ships();
+        $data['ships'] = $this->Ship_model->get_ships();
         $data['title'] = 'Ships';
  
         $this->load->view('templates/header', $data);
@@ -29,9 +29,9 @@ class Ships extends CI_Controller {
             $this->load->view('ships/create', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->Ship_model->set_ship();
+            $this->Ship_model->set_ships();
             $this->session->set_flashdata('created', '<div class="alert alert-success text-center">Ship successfully created.</div>');
-            redirect(base_url().'/ships/index', $data);
+            redirect(base_url().'ships/index', $data);
         }
     }
 

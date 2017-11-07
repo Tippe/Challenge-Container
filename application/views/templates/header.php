@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://bootswatch.com/flatly/bootstrap.min.css">
 
     <!-- Custom CSS File -->
-    <link href="<?php echo base_url('assets/css/style.css'); ?>" rel='stylesheet' type='text/css' />
+    <link href="<?= base_url(); ?>assets/css/style.css" rel='stylesheet' type='text/css' />
 
-    <link rel="icon" href="<?php echo base_url('assets/img/cargo-ship-icon.jpg'); ?>" type="image/gif" sizes="32x32">
+    <link rel="icon" href="<?= base_url(); ?>assets/img/cargo-ship-icon.jpg" type="image/gif" sizes="16x16">
   </head>
   <body>
 
@@ -29,13 +29,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand navbar-hover" href="<?php echo base_url('home')?>">Cargo Ships</a>
+      <a class="navbar-brand navbar-hover header" href="<?php echo site_url('home'); ?>"><span class="glyphicon glyphicon-home">&nbsp;</span>Cargo Ships</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a class="navbar-hover" href="<?php echo base_url('ships/index')?>">Ships</a></li>
+        <li><a class="navbar-hover header" href="<?php echo base_url('ships/index'); ?>">Ships</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
