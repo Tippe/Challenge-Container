@@ -2,14 +2,15 @@
     <div class="row">
         <div class="col-xs-12 .col-md-8-centered well">
             <?php echo validation_errors(); ?>
-            <?php echo form_open('shpis/edit/'.$ship['id']); ?>
+            <?php echo form_open('ships/edit/'.$ship['id']); ?>
             <fieldset>
                 <legend class="text-center"><h1 class="title"><?php echo $title; ?></h1></legend>
+
                 <!-- IMO Number -->
                 <div class="form-group">
                     <div class="row colbox">     
                         <label for="imo_number" class="control-label">IMO Number</label>
-                        <input type="text" id="imo_number" class="form-control" name="imo_number" value="<?php echo $ship['imo_number'] ?>"/>  
+                        <input type="text" id="imo_number" class="form-control" name="imo_number" value="<?php echo $ship['imo_number'] ?>"/>
                     </div>
                 </div>
                 
@@ -17,7 +18,7 @@
                 <div class="form-group">
                     <div class="row colbox ">     
                         <label for="name" class="control-label">Ship Name</label>
-                        <input type="name" id="name" class="form-control" name="name" value="<?php echo $ship['name'] ?>"/>   
+                        <input type="name" id="name" class="form-control" name="name" value="<?php echo $ship['name'] ?>"/>
                     </div>
                 </div>
 
@@ -29,7 +30,8 @@
                     </div>
                 </div>
 
-                <br>
+                <br />
+
                 <!-- submit button -->
                 <div class="form-group">
                     <div class="row colbox text-center">
