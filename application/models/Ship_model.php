@@ -24,6 +24,7 @@ class Ship_model extends CI_Model {
             'imo_number' => $this->input->post('imo_number'),
             'name' => $this->input->post('name'),
             'build_year' => $this->input->post('build_year'),
+            'max_capacity' => $this->input->post('max_capacity'),
         );
         if ($id == 0) {
             return $this->db->insert('ships', $data);

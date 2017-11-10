@@ -30,6 +30,14 @@
                     </div>
                 </div>
 
+                <!-- Max Capacity -->
+                <div class="form-group">
+                    <div class="row colbox">   
+                        <label for="max_capacity">Max Capacity (in Kilograms)</label>
+                        <input type="max_capacity" id="max_capacity" class="form-control" name="max_capacity" value="<?php echo $ship['max_capacity'] ?>"/>
+                    </div>
+                </div>
+
                 <br />
 
                 <!-- submit button -->
