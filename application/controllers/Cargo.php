@@ -1,9 +1,9 @@
 <?php
-class Ships extends CI_Controller {
+class Cargo extends CI_Controller {
  
     public function __construct(){
         parent::__construct();
-        $this->load->model('Ship_model');
+        $this->load->model('Cargo_model');
         $this->load->helper('url_helper');
         $this->load->helper('form');
         //$this->load->helper('date');
@@ -11,12 +11,12 @@ class Ships extends CI_Controller {
     }
  
     public function index(){
-        $data['ships'] = $this->Ship_model->get_ships();
-        $data['title'] = 'Ships';
+        $data['cargo'] = $this->Cargo_model->get_cargo();
+        $data['title'] = 'Cargo';
 
         if($this->session->userdata('user_logged') == TRUE) {
             $this->load->view('templates/header', $data);
-            $this->load->view('ships/index', $data);
+            $this->load->view('cargo/index', $data);
             $this->load->view('templates/footer');
         } else {
             $this->load->view('templates/header', $data);
@@ -26,31 +26,23 @@ class Ships extends CI_Controller {
     }
     
     public function create(){
-        $date = new datetime('Y');
-        $data['title'] = 'Create a Ship';
-        $this->form_validation->set_rules('imo_number', 'IMO Number', 'required|exact_length[7]');
-        $this->form_validation->set_rules('name', 'Ship Name', 'required');
-        $this->form_validation->set_rules('build_year', 'Build Year', 'required|exact_length[4]');
-        $this->form_validation->set_rules('max_capacity', 'Max Capacity', 'required|is_unique[ships.max_capacity]');
-        $this->form_validation->set_message('is_unique', '%s is already taken.');
-
-        /*if($this->Ship_model->get_ships_by_id('build_year') > $date->format('Y')){
-            $this->session->set_flashdata('buildyearerror', '<div class="alert alert-danger text-center">Build year is greater than this year</div>');
-            redirect(base_url().'ships/index', $data);
-        }*/
+        $data['title'] = 'Create Cargo';
+        $this->form_validation->set_rules('container_type', 'Container Type', 'required');
+        $this->form_validation->set_rules('amount', 'Amount', 'required');
+        $this->form_validation->set_rules('weight', 'Weight', 'required');
 
         if ($this->form_validation->run() === FALSE){
             $this->load->view('templates/header', $data);
-            $this->load->view('ships/create', $data);
+            $this->load->view('cargo/create', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->Ship_model->set_ships();
-            $this->session->set_flashdata('created', '<div class="alert alert-success text-center">Ship successfully created.</div>');
-            redirect(base_url().'ships/index', $data);
+            $this->Ship_model->set_cargo();
+            $this->session->set_flashdata('created', '<div class="alert alert-success text-center">Cargo successfully created.</div>');
+            redirect(base_url().'cargo/index', $data);
         }
     }
 
-    public function edit(){
+    /*public function edit(){
         $id = $this->uri->segment(3);
 
         if (empty($id)){
@@ -98,5 +90,5 @@ class Ships extends CI_Controller {
         $ship = $this->Ship_model->get_ships_by_id($id);
         $this->Ship_model->delete_ships($id);
         redirect(base_url('ships/index'));
-    }
+    }*/
 }

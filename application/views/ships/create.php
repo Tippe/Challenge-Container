@@ -31,6 +31,15 @@
                     </div>
                 </div>
 
+                <!-- Max Capacity -->
+                <div class="form-group">
+                    <div class="row colbox">   
+                        <label for="max_capacity">Max Capacity (in Kilograms)</label>
+                        <input type="max_capacity" id="max_capacity" class="form-control" name="max_capacity" placeholder="Max Capacity"/>   
+                        <span class="text-danger"><?php echo form_error('max_capacity'); ?></span>
+                    </div>
+                </div>
+
                 <br>
                 <!-- submit button -->
                 <div class="form-group">
